@@ -2578,40 +2578,41 @@ function setupAutosave() {
 			});
 
 			
-			monaco.editor.defineTheme('net-theme-dark', {
-				base: 'vs-dark',
-				inherit: true,
-				colors: {
-					"editor.background": '#141414', //ur background color
-				},
-				rules: [{
-						token: 'global',
-						foreground: '6699cc', // //FFFFFF
-						fontStyle: "bold"
-					},
-					{
-						token: 'keyword',
-						foreground: 'cc99cc',
-						fontStyle: "bold"
-					},
-					{
-						token: 'comment',
-						foreground: '999999'
-					},
-					{
-						token: 'number',
-						foreground: 'f99157'
-					},
-					{
-						token: 'string',
-						foreground: '99CC99'
-					},
-					{
-						token: 'Method',
-						foreground: 'ffa1dc'
-					},
-				]
-			});
+			monaco.editor.defineTheme('net-theme-light', {
+    base: 'vs',  // Changed from 'vs-dark' to 'vs' for light mode
+    inherit: true,
+    colors: {
+        "editor.background": '#f5f5f5',  // Light background
+    },
+    rules: [
+        {
+            token: 'global',
+            foreground: '4169e1',  // Less intense blue
+            fontStyle: "bold"
+        },
+        {
+            token: 'keyword',
+            foreground: '9c27b0',  // Darker purple
+            fontStyle: "bold"
+        },
+        {
+            token: 'comment',
+            foreground: '808080'  // Medium gray
+        },
+        {
+            token: 'number',
+            foreground: 'e65100'  // Darker orange
+        },
+        {
+            token: 'string',
+            foreground: '2e7d32'  // Darker green
+        },
+        {
+            token: 'Method',
+            foreground: 'c2185b'  // Darker pink
+        },
+    ]
+});
 
 			editor = monaco.editor.create(document.getElementById('container'), {
 				language: 'lua',
